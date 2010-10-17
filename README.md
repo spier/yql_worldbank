@@ -3,8 +3,9 @@
 First try, not necessarily all functional!
 
 References:
-[http://data.worldbank.org/developers/api-overview](WorldBank Data AP)
-[https://developer.yahoo.com/yql/guide/](YQL Documentation)
+
+* [http://data.worldbank.org/developers/api-overview](WorldBank Data AP)
+* [https://developer.yahoo.com/yql/guide/](YQL Documentation)
 
 ## worldbank.sources
 USE "http://github.com/spier/yql_worldbank/raw/master/worldbank.sources.xml" AS worldbank.sources; 
@@ -52,7 +53,8 @@ SELECT * FROM worldbank.indicators WHERE country="GH"
 USE "http://github.com/spier/yql_worldbank/raw/master/worldbank.data.xml" AS worldbank.data; 
 SELECT * FROM worldbank.data WHERE indicator = "SP.POP.TOTL"
 
-- all indicator for Ghana starting from year 2000
+* all indicator for Ghana starting from year 2000
+
 USE "http://github.com/spier/yql_worldbank/raw/master/worldbank.data.xml" AS worldbank.data; 
 SELECT date FROM worldbank.data(0,200) WHERE indicator = "SP.POP.TOTL" AND country="GH" AND from_year="2000"
 
