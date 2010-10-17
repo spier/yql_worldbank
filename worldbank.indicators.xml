@@ -10,6 +10,10 @@
 		<sampleQuery>SELECT * FROM {table} WHERE indicator='BAR.PRM.SCHL.1519'</sampleQuery>		
 	</meta>
 	<bindings>
+		<!--
+			* If 'indicator' is omitted returns a list of all indicators
+			* Otherwise returns details about the specified indicator.
+		-->
 		<select itemPath="wb:indicators.wb:indicator" produces="XML">
 			<urls>
         		<url env="all">http://api.worldbank.org/indicators/{indicator}</url>
@@ -23,5 +27,47 @@
 		        <key id="indicator" type="xs:string" paramType="path" />
 	      	</inputs>
     	</select>
+
+		<!--
+			Returns indicator information for a specific source
+			Documentation from http://data.worldbank.org/node/203:
+			* Display all indicators for the source: Doing Business
+			http://api.worldbank.org/source/Doing Business/indicators
+			* Display all indicators for the source: Doing Business referred by numeric ID
+			http://api.worldbank.org/source/1/indicators
+		-->
+		<select itemPath="wb:indicators.wb:indicator" produces="XML">
+			<urls>
+				<url env="all">http://api.worldbank.org/source/{source}/indicators</url>
+			</urls>
+			<paging model="page">
+				<start id="page" default="1" />
+				<pagesize id="per_page" max="100" />
+				<total default="10" />
+			</paging>
+		  	<inputs>
+		        <key id="source" type="xs:string" paramType="path" required="true"/>
+		  	</inputs>
+		</select>
+		
+		<!--
+			Returns indicator information for a specific country
+			Documentation from http://data.worldbank.org/node/203:
+			* List all available indicators for country Brazil (this call also accepts the 3 letter ISO code)
+			http://api.worldbank.org/countries/br/indicators
+		-->
+		<select itemPath="wb:indicators.wb:indicator" produces="XML">
+			<urls>
+				<url env="all">http://api.worldbank.org/countries/{country}/indicators</url>
+			</urls>
+			<paging model="page">
+				<start id="page" default="1" />
+				<pagesize id="per_page" max="100" />
+				<total default="10" />
+			</paging>
+		  	<inputs>
+		        <key id="country" type="xs:string" paramType="path" required="true"/>
+		  	</inputs>
+		</select>		
   	</bindings>
 </table>
