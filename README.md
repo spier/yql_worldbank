@@ -9,13 +9,13 @@ You can include all these datatables in the YQL console by launching it via this
 
 Once you have done that, try out any of the YQL queries below
 
-References:
+*References:*
 
 * [WorldBank Data AP](http://data.worldbank.org/developers/api-overview)
 * [YQL Documentation](https://developer.yahoo.com/yql/guide/)
 * [Apps for Development](http://appsfordevelopment.challengepost.com/)
 
-Notes:
+*Notes:*
 
 Currently I am querying the World bank APi via XML. To limit the load on their systems I might switch to JSON in the future if I find out how to do this. This should not influence the usage of the YQL datatables though.
 
