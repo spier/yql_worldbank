@@ -7,6 +7,7 @@
 		<sampleQuery>SELECT * FROM {table} WHERE country_id = "GHA"</sampleQuery>		
 	</meta>
 	<bindings>
+		
 		<!-- countries for a specific lending type. see: http://data.worldbank.org/node/208 -->
 		<select itemPath="wb:countries.wb:country" produces="XML">
 			<urls>
@@ -18,10 +19,24 @@
 				<total default="10" />
 			</paging>
 	      	<inputs>
-		        <key id="lendingType" type="xs:string" paramType="query" />
+		        <key id="lendingType" type="xs:string" paramType="query" required="true" />
 	      	</inputs>
     	</select>
-		
+
+		<!-- countries for a specific income level. see: http://data.worldbank.org/node/207 -->
+		<select itemPath="wb:countries.wb:country" produces="XML">
+			<urls>
+        		<url env="all">http://api.worldbank.org/countries</url>
+      		</urls>
+			<paging model="page">
+				<start id="page" default="1" />
+				<pagesize id="per_page" max="100" />
+				<total default="10" />
+			</paging>
+	      	<inputs>
+		        <key id="incomeLevel" type="xs:string" paramType="query" required="true" />
+	      	</inputs>
+    	</select>		
 		
 		<!-- either a list of all countries, or a country with a specific ID -->
 		<select itemPath="wb:countries.wb:country" produces="XML">
