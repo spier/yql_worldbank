@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+  <meta>
+    <sampleQuery>select * from {table} where publisher='digg' and action='dugg'</sampleQuery>
+  </meta>
+  <bindings>
+    <select itemPath="activities.activity" produces="XML" >
+      <urls>
+        <url env="all">https://prod.gnipcentral.com/publishers/{publisher}/notification/{bucket}.xml</url>
+      </urls>
+      <inputs>
+        <key id="publisher" type="xs:string" paramType="path" required="true" />
+        <key id="bucket" type="xs:string" paramType="path" required="true" />
+        <key id="Authorization" type="xs:string" paramType="header" const="true" default="Basic eXFsLXF1ZXN...BpcGVz" />
+      </inputs>
+    </select>
+    <select itemPath="activities.activity" produces="XML" useProxy="true" auth="callback">
+      <urls>
+        <url env="all">https://prod.gnipcentral.com/publishers/{publisher}/notification/current.xml</url>
+      </urls>
+      <inputs>
+        <key id="publisher" type="xs:string" paramType="path" required="true" />
+        <key id="Authorization" type="xs:string" paramType="header" const="true" default="Basic eXFsLXF1ZXN0a...BpcGVz" />
+      </inputs>
+    </select>
+  </bindings>
+</table>
