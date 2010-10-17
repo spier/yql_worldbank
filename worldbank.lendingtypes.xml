@@ -2,8 +2,8 @@
 <table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
 	<meta>
 		<author>Sebastian Spier</author>
-		<description>Income Level Queries WorldBank Data API (normally not used directly)</description>
-	   	<documentationURL>http://data.worldbank.org/node/207</documentationURL>
+		<description>Lending Type Queries WorldBank Data API (normally not used directly)</description>
+	   	<documentationURL>http://data.worldbank.org/node/208</documentationURL>
 		<sampleQuery>SELECT * FROM {table}</sampleQuery>		
 	</meta>
 	<bindings>
