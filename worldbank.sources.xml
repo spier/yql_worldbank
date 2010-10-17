@@ -2,14 +2,17 @@
 <table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
 	<meta>
 		<author>Sebastian Spier</author>
-		<description>WorldBank Data API</description>
+		<description>
+			WorldBank Data API
+			Catalog Sources Queries: http://data.worldbank.org/node/210
+		</description>
 	   	<documentationURL>http://data.worldbank.org/developers/api-overview</documentationURL>
 		<sampleQuery>TODO</sampleQuery>		
 	</meta>
 	<bindings>
-		<select itemPath="wb:data.wb:data" produces="XML">
+		<select itemPath="results.result" produces="JSON">
 			<urls>
-        		<url env="all">http://api.worldbank.org/sources/{source_id}</url>
+        		<url env="all">http://api.worldbank.org/sources/{source_id}?format=json</url>
       		</urls>
 			<paging model="page">
 				<start id="page" default="1" />
