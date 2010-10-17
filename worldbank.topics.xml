@@ -17,7 +17,7 @@
 			<paging model="page">
 				<start id="page" default="1" />
 				<pagesize id="per_page" max="100" />
-				<total default="10" />
+				<total default="20" />
 			</paging>
 	      	<inputs>
 		        <key id="topic_id" type="xs:string" paramType="path" />
