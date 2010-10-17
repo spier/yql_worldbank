@@ -4,7 +4,7 @@
 		<author>Sebastian Spier</author>
 		<description>Topic Queries WorldBank Data API</description>
 	   	<documentationURL>http://data.worldbank.org/node/209</documentationURL>
-		<sampleQuery>SELECT {table} FROM worldbank.topics WHERE topic_id = 1</sampleQuery>		
+		<sampleQuery>SELECT * FROM {table} WHERE topic_id = 1</sampleQuery>		
 	</meta>
 	<bindings>
 		<select itemPath="wb:topics.wb:topic" produces="XML">
