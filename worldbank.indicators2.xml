@@ -4,15 +4,14 @@
 		<author>Sebastian Spier</author>
 		<description>
 			WorldBank Data API
-			Indicator Queries: http://data.worldbank.org/node/203
 		</description>
 	   	<documentationURL>http://data.worldbank.org/developers/api-overview</documentationURL>
-		<sampleQuery>SELECT * FROM {table} WHERE indicator='BAR.PRM.SCHL.1519'</sampleQuery>		
+		<sampleQuery>select * from {table} where country='TUR' and indicator='BAR.PRM.SCHL.1519'</sampleQuery>		
 	</meta>
 	<bindings>
-		<select itemPath="wb:indicators.wb:indicator" produces="XML">
+		<select itemPath="wb:data.wb:data" produces="XML">
 			<urls>
-        		<url env="all">http://api.worldbank.org/indicators/{indicator}</url>
+        		<url env="all">http://api.worldbank.org/countries/{country}/indicators/{indicator}</url>
       		</urls>
 			<paging model="page">
 				<start id="page" default="1" />
@@ -21,6 +20,7 @@
 			</paging>
 	      	<inputs>
 		        <key id="indicator" type="xs:string" paramType="path" />
+		        <key id="country" type="xs:string" paramType="path" default="all" />
 	      	</inputs>
     	</select>
   	</bindings>
