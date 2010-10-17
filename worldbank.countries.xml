@@ -20,8 +20,8 @@
 				<total default="10" />
 			</paging>
 	      	<inputs>
-		        <key id="incomeLevel" type="xs:string" paramType="query" />
-				<key id="lendingType" type="xs:string" paramType="query" />
+		        <key id="income_level" type="xs:string" paramType="query" />
+				<key id="lending_type" type="xs:string" paramType="query" />
 	      	</inputs>
     	</select>		
 		

@@ -95,11 +95,29 @@ Currently I am querying the World bank APi via XML. To limit the load on their s
 * get only year and value for indicator with ID "SP.POP.TOTL" in country Ghana, for the years 1980 - 1985
 
 		SELECT date,value FROM worldbank.data(0,100) WHERE indicator_id = "SP.POP.TOTL" AND country_id = "GH" AND from_year = 1980 AND to_year = 1985
+		
+* get data with ID "SP.POP.TOTL" for all countries in the Middle East & North Africa region (MNA)
+
+		SELECT * FROM worldbank.data(0,200) WHERE indicator_id = "SP.POP.TOTL" AND region_code="MNA"
+		
+* get data with ID "SP.POP.TOTL" for all countries in with "Lower middle income" (LMC)		
+
+		SELECT * FROM worldbank.data(0,200) WHERE indicator_id = "SP.POP.TOTL" AND income_level="LMC"
+
+				
 
 # More Complex Examples
 
-
+TBD
 
 # Queries currently not supported by these YQL mappings (please let me know if you do them yourself!)
 http://api.worldbank.org/countries/DE/indicators/NY.GNP.PCAP.CD?date=1970
+
+Are the Income Level Queries and Lending Type Queries needed in other tables than the worldbank.countries table? http://data.worldbank.org/node/207
+http://data.worldbank.org/node/208
+
+Inconsistent naming:
+wb:IncomeLevels.wb:incomeLevel
+
+
 
