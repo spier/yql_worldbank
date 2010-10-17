@@ -5,7 +5,7 @@ I have created this YQL datatables to make working with the World bank Data API 
 The YQL queries listed below should work (I tried each of them at least once) but I am sure that my YQL datatables are not flawless. Please post issues if you find them, contribute to the table mappings, and let me know if your have made YQL mappings for the World Bank Data API yourself!
 
 You can include all these datatables in the YQL console by launching it via this link:
-(http://developer.yahoo.com/yql/console/?env=http://github.com/spier/yql_worldbank/raw/master/alltables.env)
+[YQL console with worldbank datatables](http://developer.yahoo.com/yql/console/?env=http://github.com/spier/yql_worldbank/raw/master/alltables.env)
 
 Once you have done that, try out any of the YQL queries below
 
