@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+	<meta>
+		<author>Sebastian Spier</author>
+		<description>
+			WorldBank Data API
+			Country Queries: http://data.worldbank.org/node/18
+		</description>
+	   	<documentationURL>http://data.worldbank.org/developers/api-overview</documentationURL>
+		<sampleQuery>TODO</sampleQuery>		
+	</meta>
+	<bindings>
+		<select itemPath="wb:countries.wb:country" produces="XML">
+			<urls>
+        		<url env="all">http://api.worldbank.org/countries/{country}</url>
+      		</urls>
+			<paging model="page">
+				<start id="page" default="1" />
+				<pagesize id="per_page" max="100" />
+				<total default="10" />
+			</paging>
+	      	<inputs>
+		        <key id="country_code" type="xs:string" paramType="path" />
+	      	</inputs>
+    	</select>
+  	</bindings>
+</table>
