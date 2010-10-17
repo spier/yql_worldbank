@@ -7,6 +7,23 @@
 		<sampleQuery>SELECT * FROM {table} WHERE country_id = "GHA"</sampleQuery>		
 	</meta>
 	<bindings>
+		<!-- countries for a specific lending type. see: http://data.worldbank.org/node/208 -->
+		<select itemPath="wb:countries.wb:country" produces="XML">
+			<urls>
+        		<url env="all">http://api.worldbank.org/countries</url>
+      		</urls>
+			<paging model="page">
+				<start id="page" default="1" />
+				<pagesize id="per_page" max="100" />
+				<total default="10" />
+			</paging>
+	      	<inputs>
+		        <key id="lendingType" type="xs:string" paramType="query" />
+	      	</inputs>
+    	</select>
+		
+		
+		<!-- either a list of all countries, or a country with a specific ID -->
 		<select itemPath="wb:countries.wb:country" produces="XML">
 			<urls>
         		<url env="all">http://api.worldbank.org/countries/{country_id}</url>
@@ -20,5 +37,6 @@
 		        <key id="country_id" type="xs:string" paramType="path" />
 	      	</inputs>
     	</select>
+
   	</bindings>
 </table>
