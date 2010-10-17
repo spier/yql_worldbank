@@ -1,8 +1,8 @@
 # YQL Datatables for the World Bank Data API
 
-I have created this YQL datatables to make working with the World bank Data API easier. My goal is to use it for some useful application for the [http://appsfordevelopment.challengepost.com/](Apps for Development) content by you may of course use it for different purposes.
+I have created this YQL datatables to make working with the World bank Data API easier. My goal is to use it for some useful application for the [http://appsfordevelopment.challengepost.com/](Apps for Development) contest by you may of course use it for different purposes.
 
-The YQL queries listed below have been tried at least once but I am sure that my YQL datatables are not flawless. Please post issues if you find them, contribute to the table mappings, and let me know if your have made YQL mappings for the World Bank Data API yourself!
+The YQL queries listed below should work (I tried each of them at least once) but I am sure that my YQL datatables are not flawless. Please post issues if you find them, contribute to the table mappings, and let me know if your have made YQL mappings for the World Bank Data API yourself!
 
 You can include all these datatables in the YQL console by launching it via this link:
 [http://developer.yahoo.com/yql/console/?env=http://github.com/spier/yql_worldbank/raw/master/alltables.env]
@@ -13,6 +13,11 @@ References:
 
 * [http://data.worldbank.org/developers/api-overview](WorldBank Data AP)
 * [https://developer.yahoo.com/yql/guide/](YQL Documentation)
+* [http://appsfordevelopment.challengepost.com/](Apps for Development) 
+
+Notes:
+Currently I am querying the World bank APi via XML. To limit the load on their systems I might switch to JSON in the future iff I find out how to do this. This should not influence the usage of the YQL datatables though.
+
 
 ## worldbank.sources
 * get data of all sources
@@ -84,7 +89,7 @@ References:
 
 * get data for indicator with ID "SP.POP.TOTL" in country Ghana, for the years 1980 - 1985
 
-		SELECT * FROM worldbank.data(0,100) WHERE indicator_id = "SP.POP.TOTL" AND country_id = "GHA" AND from_year=1980 AND to_year = 1985
+		SELECT * FROM worldbank.data(0,100) WHERE indicator_id = "SP.POP.TOTL" AND country_id = "GHA" AND from_year = 1980 AND to_year = 1985
 
 * get only year and value for indicator with ID "SP.POP.TOTL" in country Ghana, for the years 1980 - 1985
 
@@ -94,9 +99,6 @@ References:
 
 
 
-
 # Queries currently not supported by these YQL mappings (please let me know if you do them yourself!)
 http://api.worldbank.org/countries/DE/indicators/NY.GNP.PCAP.CD?date=1970
-
-
 
