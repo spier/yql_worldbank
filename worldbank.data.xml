@@ -2,17 +2,14 @@
 <table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
 	<meta>
 		<author>Sebastian Spier</author>
-		<description>
-			WorldBank Data API, 
-			Effort to combine all the data queries
-		</description>
+		<description>Data Queries WorldBank Data API</description>
 	   	<documentationURL>http://data.worldbank.org/developers/api-overview</documentationURL>
-		<sampleQuery>select * from {table} where country='TUR' and indicator='BAR.PRM.SCHL.1519'</sampleQuery>		
+		<sampleQuery>SELECT * FROM {table} WHERE country_id = 'TUR' AND indicator_id = 'BAR.PRM.SCHL.1519'</sampleQuery>		
 	</meta>
 	<bindings>
 		<select itemPath="wb:data.wb:data" produces="XML">
 			<urls>
-        		<url env="all">http://api.worldbank.org/countries/{country}/indicators/{indicator}?date={from_year}:{to_year}</url>
+        		<url env="all">http://api.worldbank.org/countries/{country_id}/indicators/{indicator_id}?date={from_year}:{to_year}</url>
       		</urls>
 			<paging model="page">
 				<start id="page" default="1" />
@@ -20,9 +17,9 @@
 				<total default="10" />
 			</paging>
 	      	<inputs>
-		        <key id="indicator" type="xs:string" paramType="path" required="true"/>
+		        <key id="indicator_id" type="xs:string" paramType="path" required="true"/>
 		
-		        <key id="country" type="xs:string" paramType="path" default="all" />
+		        <key id="country_id" type="xs:string" paramType="path" default="all" />
 				<key id="from_year" type="xs:string" paramType="path" default="1960" />
 				<key id="to_year" type="xs:string" paramType="path" default="2010" />
 	      	</inputs>

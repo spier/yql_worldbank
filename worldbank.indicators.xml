@@ -2,17 +2,13 @@
 <table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
 	<meta>
 		<author>Sebastian Spier</author>
-		<description>
-			WorldBank Data API
-			Indicator Queries: http://data.worldbank.org/node/203
-		</description>
-	   	<documentationURL>http://data.worldbank.org/developers/api-overview</documentationURL>
-		<sampleQuery>SELECT * FROM {table} WHERE indicator='BAR.PRM.SCHL.1519'</sampleQuery>		
+		<description>Indicator Queries WorldBank Data API</description>
+	   	<documentationURL>http://data.worldbank.org/node/203</documentationURL>
+		<sampleQuery>SELECT * FROM {table} WHERE indicator_id = 'BAR.PRM.SCHL.1519'</sampleQuery>		
 	</meta>
 	<bindings>
-		<!--
-			
-			NOTE: This API endpoint seems not to exist anymore.
+		<!--			
+			NOTE: This API endpoint seems not to exist anymore. I just keep this information in here to document this.
 			
 			Returns indicator information for a specific country
 			Documentation from http://data.worldbank.org/node/203:
@@ -66,7 +62,7 @@
 		-->
 		<select itemPath="wb:indicators.wb:indicator" produces="XML">
 			<urls>
-        		<url env="all">http://api.worldbank.org/indicators/{indicator}</url>
+        		<url env="all">http://api.worldbank.org/indicators/{indicator_id}</url>
       		</urls>
 			<paging model="page">
 				<start id="page" default="1" />
@@ -74,7 +70,7 @@
 				<total default="10" />
 			</paging>
 	      	<inputs>
-		        <key id="indicator" type="xs:string" paramType="path" />
+		        <key id="indicator_id" type="xs:string" paramType="path" />
 	      	</inputs>
     	</select>
 		

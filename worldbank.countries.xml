@@ -4,7 +4,7 @@
 		<author>Sebastian Spier</author>
 		<description>Country Queries WorldBank Data API</description>
 	   	<documentationURL>http://data.worldbank.org/node/18</documentationURL>
-		<sampleQuery>SELECT * FROM {table} WHERE country_id = "GH"</sampleQuery>		
+		<sampleQuery>SELECT * FROM {table} WHERE country_id = "GHA"</sampleQuery>		
 	</meta>
 	<bindings>
 		<select itemPath="wb:countries.wb:country" produces="XML">

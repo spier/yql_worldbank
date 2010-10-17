@@ -2,12 +2,9 @@
 <table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
 	<meta>
 		<author>Sebastian Spier</author>
-		<description>
-			WorldBank Data API
-			Catalog Sources Queries: http://data.worldbank.org/node/210
-		</description>
-	   	<documentationURL>http://data.worldbank.org/developers/api-overview</documentationURL>
-		<sampleQuery>TODO</sampleQuery>		
+		<description>Catalog Sources Queries WorldBank Data API</description>
+	   	<documentationURL>http://data.worldbank.org/node/210</documentationURL>
+		<sampleQuery>SELECT * FROM {table} WHERE source_id = 1</sampleQuery>		
 	</meta>
 	<bindings>
 		<!-- <select itemPath="json.json.json" produces="JSON"> -->
