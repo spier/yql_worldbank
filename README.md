@@ -1,23 +1,23 @@
 # YQL Datatables for the World Bank Data API
 
-I have created this YQL datatables to make working with the World bank Data API easier. My goal is to use it for some useful application for the [http://appsfordevelopment.challengepost.com/](Apps for Development) contest by you may of course use it for different purposes.
+I have created this YQL datatables to make working with the World bank Data API easier. My goal is to use it for some useful application for the [Apps for Development](http://appsfordevelopment.challengepost.com) contest by you may of course use it for different purposes.
 
 The YQL queries listed below should work (I tried each of them at least once) but I am sure that my YQL datatables are not flawless. Please post issues if you find them, contribute to the table mappings, and let me know if your have made YQL mappings for the World Bank Data API yourself!
 
 You can include all these datatables in the YQL console by launching it via this link:
-[http://developer.yahoo.com/yql/console/?env=http://github.com/spier/yql_worldbank/raw/master/alltables.env]
+(http://developer.yahoo.com/yql/console/?env=http://github.com/spier/yql_worldbank/raw/master/alltables.env)
 
 Once you have done that, try out any of the YQL queries below
 
 References:
 
-* [http://data.worldbank.org/developers/api-overview](WorldBank Data AP)
-* [https://developer.yahoo.com/yql/guide/](YQL Documentation)
-* [http://appsfordevelopment.challengepost.com/](Apps for Development) 
+* [WorldBank Data AP](http://data.worldbank.org/developers/api-overview)
+* [YQL Documentation](https://developer.yahoo.com/yql/guide/)
+* [Apps for Development](http://appsfordevelopment.challengepost.com/)
 
 Notes:
 
-Currently I am querying the World bank APi via XML. To limit the load on their systems I might switch to JSON in the future iff I find out how to do this. This should not influence the usage of the YQL datatables though.
+Currently I am querying the World bank APi via XML. To limit the load on their systems I might switch to JSON in the future if I find out how to do this. This should not influence the usage of the YQL datatables though.
 
 
 ## worldbank.sources
