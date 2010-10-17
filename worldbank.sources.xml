@@ -10,7 +10,7 @@
 		<sampleQuery>TODO</sampleQuery>		
 	</meta>
 	<bindings>
-		<select itemPath="[1].[0]" produces="JSON">
+		<select itemPath="[1][0]" produces="JSON">
 			<urls>
         		<url env="all">http://api.worldbank.org/sources/{source_id}?format=json</url>
       		</urls>
