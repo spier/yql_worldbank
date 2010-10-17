@@ -2,17 +2,14 @@
 <table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
 	<meta>
 		<author>Sebastian Spier</author>
-		<description>
-			WorldBank Data API
-			Country Queries: http://data.worldbank.org/node/18
-		</description>
-	   	<documentationURL>http://data.worldbank.org/developers/api-overview</documentationURL>
-		<sampleQuery>TODO</sampleQuery>		
+		<description>Country Queries WorldBank Data API</description>
+	   	<documentationURL>http://data.worldbank.org/node/18</documentationURL>
+		<sampleQuery>SELECT * FROM {table} WHERE country_id = "GH"</sampleQuery>		
 	</meta>
 	<bindings>
 		<select itemPath="wb:countries.wb:country" produces="XML">
 			<urls>
-        		<url env="all">http://api.worldbank.org/countries/{iso2Code}</url>
+        		<url env="all">http://api.worldbank.org/countries/{country_id}</url>
       		</urls>
 			<paging model="page">
 				<start id="page" default="1" />
@@ -20,7 +17,7 @@
 				<total default="10" />
 			</paging>
 	      	<inputs>
-		        <key id="iso2Code" type="xs:string" paramType="path" />
+		        <key id="country_id" type="xs:string" paramType="path" />
 	      	</inputs>
     	</select>
   	</bindings>
