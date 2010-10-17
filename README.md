@@ -1,6 +1,7 @@
 # YQL Datatables for the World Bank Data API
 
 First try, not necessarily all functional!
+Please post issues if you find them, contribute to the table mappings, and let me know if your have made YQL mappings for the World Bank Data API yourself!
 
 References:
 
