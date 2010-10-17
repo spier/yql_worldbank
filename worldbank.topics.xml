@@ -2,12 +2,9 @@
 <table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
 	<meta>
 		<author>Sebastian Spier</author>
-		<description>
-			WorldBank Data API
-			Topic Queries: http://data.worldbank.org/node/209
-		</description>
-	   	<documentationURL>http://data.worldbank.org/developers/api-overview</documentationURL>
-		<sampleQuery>TODO</sampleQuery>		
+		<description>Topic Queries WorldBank Data API</description>
+	   	<documentationURL>http://data.worldbank.org/node/209</documentationURL>
+		<sampleQuery>SELECT {table} FROM worldbank.topics WHERE topic_id = 1</sampleQuery>		
 	</meta>
 	<bindings>
 		<select itemPath="wb:topics.wb:topic" produces="XML">
