@@ -48,7 +48,7 @@
 		-->
 		<select itemPath="wb:indicators.wb:indicator" produces="XML">
 			<urls>
-				<url env="all">http://api.worldbank.org/source/{source}/indicators</url>
+				<url env="all">http://api.worldbank.org/source/{source_id}/indicators</url>
 			</urls>
 			<paging model="page">
 				<start id="page" default="1" />
