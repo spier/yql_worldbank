@@ -16,6 +16,7 @@ References:
 * [http://appsfordevelopment.challengepost.com/](Apps for Development) 
 
 Notes:
+
 Currently I am querying the World bank APi via XML. To limit the load on their systems I might switch to JSON in the future iff I find out how to do this. This should not influence the usage of the YQL datatables though.
 
 
