@@ -12,7 +12,7 @@
 		<!-- countries for a specific lending type. see: http://data.worldbank.org/node/208 -->
 		<select itemPath="wb:countries.wb:country" produces="XML">
 			<urls>
-        		<url env="all">http://api.worldbank.org/countries</url>
+        		<url env="all">http://api.worldbank.org/countries/{country_id}</url>
       		</urls>
 			<paging model="page">
 				<start id="page" default="1" />
