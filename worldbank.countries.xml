@@ -12,7 +12,7 @@
 		<!-- countries for a specific lending type. see: http://data.worldbank.org/node/208 -->
 		<select itemPath="wb:countries.wb:country" produces="XML">
 			<urls>
-        		<url env="all">http://api.worldbank.org/countries/{country_id}</url>
+        		<url env="all">http://api.worldbank.org/countries/{-listjoin|;|country_id}</url>
       		</urls>
 			<paging model="page">
 				<start id="page" default="1" />
@@ -20,7 +20,7 @@
 				<total default="10" />
 			</paging>
 	      	<inputs>
-				<key id="country_id" type="xs:string" paramType="path" />
+				<key id="country_id" type="xs:string" paramType="path" batchable="true" />
 		        <key id="incomeLevel" as="income_level" type="xs:string" paramType="query" />
 				<key id="lendingType" as="lending_type" type="xs:string" paramType="query" />
 	      	</inputs>
