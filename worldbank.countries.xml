@@ -21,8 +21,8 @@
 			</paging>
 	      	<inputs>
 				<key id="country_id" type="xs:string" paramType="path" />
-		        <key id="income_level" type="xs:string" paramType="query" />
-				<key id="lending_type" type="xs:string" paramType="query" />
+		        <key id="incomeLevel" as="income_level" type="xs:string" paramType="query" />
+				<key id="lendingType" as="lending_type" type="xs:string" paramType="query" />
 	      	</inputs>
     	</select>		
 		
