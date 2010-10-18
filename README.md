@@ -41,6 +41,14 @@ Currently I am querying the World bank APi via XML. To limit the load on their s
 * get all data for Ghana
 
 		SELECT * FROM worldbank.countries WHERE country_id = "GHA"
+		
+* get data for countries classified with a certain income level (see http://data.worldbank.org/node/207)
+
+		SELECT * FROM worldbank.countries(0,200) WHERE income_level="LMC"
+		
+* get data for countries classified with a certain lending type (see http://data.worldbank.org/node/208)
+
+		SELECT * FROM worldbank.countries(0,200) WHERE lending_type="IBD" 
 
 ## worldbank.topics
 
@@ -74,9 +82,9 @@ Currently I am querying the World bank APi via XML. To limit the load on their s
 
 		SELECT * FROM worldbank.indicators(0,100) WHERE source_id="1"
 
-* No longer supported by the WB API:
+* NOTE: No longer supported by the World Bank API:
 
-		SELECT * FROM worldbank.indicators WHERE country="GH"
+		SELECT * FROM worldbank.indicators WHERE country_id_="GH"
 
 ## worldbank.data
 
@@ -118,6 +126,13 @@ http://data.worldbank.org/node/208
 
 Inconsistent naming:
 wb:IncomeLevels.wb:incomeLevel
+
+# TODO / TEST THESE
+
+certain calls can be made batchable. this is not implemented yet
+see http://developer.yahoo.com/yql/guide/yql-opentables-reference.html#yql-opentables-key
+
+
 
 
 
